@@ -1,6 +1,10 @@
 import React from 'react';
 
 const ArticleList = ({ articles }) => {
+    if (articles.length === 0) {
+        return <div className="p-4 text-center mt-3">No articles found.</div>;
+    }
+
     return (
         <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {articles.map((article) => (
